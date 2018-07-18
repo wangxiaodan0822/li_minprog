@@ -1,0 +1,50 @@
+<template>
+  <pageWrapper>
+    <view>
+
+    </view>
+  </pageWrapper>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import PageWrapper from '../../widget/page/pageWrapper'
+
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: 'Index'
+    }
+//    mixins = [mixins]
+    components = {
+      pageWrapper: PageWrapper
+    }
+    data = {}
+    watch = {}
+    computed = {}
+    methods = {}
+    events = {}
+
+    onLoad () {
+    }
+
+    onShow () {
+    }
+
+    onRoute () {
+    }
+
+    onReady () {
+    }
+
+    onHide () {
+    }
+
+    onUnload () {
+    }
+  }
+</script>
+
+<style lang="scss" scoped>
+  @import "../../styles/index";
+
+</style>

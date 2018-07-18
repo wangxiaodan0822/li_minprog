@@ -1,0 +1,163 @@
+@import "./variable";
+
+// 文字最大行数
+@mixin maxLine($count) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $count;
+  overflow: hidden;
+  word-break: break-all;
+  text-overflow: ellipsis;
+}
+
+// 文字删除线
+@mixin textThrough {
+  text-decoration: line-through;
+}
+
+@mixin _hairline() {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    transform-origin: 0 0;
+    transform: scale(.5);
+    box-sizing: border-box;
+    pointer-events: none;
+    overflow: visible;
+  }
+}
+
+/**
+ * border
+ * $hideDirection: '(left,right,top,bottom)'
+ */
+@mixin border($radius : 0, $color: $colorBorder, $hideDirection: ()) {
+  @include _hairline;
+  border-radius: $radius;
+  @each $i in $hideDirection {
+    @if $i == top {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+    @if $i == right {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    @if $i == bottom {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    @if $i == left {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+  &:after {
+    border-radius: $radius * 2;
+    border: 1px solid $color;
+    @each $i in $hideDirection {
+      border-#{$i}: none;
+      @if $i == top {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+      @if $i == right {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+      @if $i == bottom {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+      @if $i == left {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+}
+
+// divider
+@mixin dividerByBorder($direction: bottom, $color: $colorDivider, $selector: after) {
+  position: relative;
+  &:#{$selector} {
+    content: '';
+    position: absolute;
+    transform: scale(.5);
+    box-sizing: content-box;
+    z-index: 1;
+    @if $direction == top {
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 1px;
+      border-top: 1px solid $color;
+      transform-origin: left top;
+    }
+    @if $direction == right {
+      top: 0;
+      right: 0;
+      width: 1px;
+      height: 200%;
+      border-right: 1px solid $color;
+      transform-origin: right top;
+    }
+    @if $direction == bottom {
+      bottom: 0;
+      left: 0;
+      width: 200%;
+      height: 1px;
+      border-bottom: 1px solid $color;
+      transform-origin: left bottom;
+    }
+    @if $direction == left {
+      top: 0;
+      left: 0;
+      width: 1px;
+      height: 200%;
+      border-left: 1px solid $color;
+      transform-origin: left top;
+    }
+  }
+}
+
+/**
+ * 聊天气泡(底部)
+ */
+@mixin bubbleBottom($background, $left: 0, $width: 20, $height: 12, $radius: 0) {
+  background: $background;
+  position: relative;
+  border-radius: $radius;
+  display: block;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: rpx(-$height + 2); //临时修复三角形下面出现空隙的bug
+    left: rpx($left);
+    width: 0;
+    height: 0;
+    border-left: rpx($width / 2) solid transparent;
+    border-right: rpx($width / 2) solid transparent;
+    border-bottom: rpx($height) solid $background;
+  }
+}
+
+@mixin x($height) {
+  height: rpx($height);
+  &.x {
+    height: rpx($height + 40);
+    padding-bottom: rpx(40);
+  }
+}
+
+@mixin xWithoutBg() {
+  &.x {
+    bottom: rpx(68);
+  }
+}

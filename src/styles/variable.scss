@@ -1,0 +1,47 @@
+@import "./function";
+
+/* color start */
+// 基础颜色
+$white: #fff;
+$black: #000;
+$gray: #F5F5F5;
+
+// 主色
+$colorPrimary: #EA2554;
+
+// 文字
+$colorTextPrimary: #242424;
+$colorTextSecondary: #767676;
+$colorTextTertiary: #999999;
+$colorTextHighlight: #F32B2B;
+
+// 线条
+$colorDivider: #DDDDDD;
+$colorBorder: #CCCCCC;
+$colorDisabledBorder: #DDDDDD;
+$colorDisabledButton: #AAAAAA;
+/* color end */
+
+/* radius start */
+//radius
+$radiusBorder: rpx(4);
+$radiusButton: rpx(6);
+/* radius end */
+
+/* size start */
+// 字号
+$fontSize32: rpx(32);
+$fontSizeTitle: rpx(28);
+$fontSizeBody: rpx(26);
+$fontSizeCaption: rpx(24);
+$fontSizeHint: rpx(22);
+$fontSizePrice: rpx(32);
+/* size end */
+
+/* padding start */
+//padding
+$margin: rpx(20);
+$marginSmall: rpx(10);
+
+$dividerHeight: rpx(10);
+/* padding end */

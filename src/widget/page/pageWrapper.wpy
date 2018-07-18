@@ -1,0 +1,27 @@
+<template>
+  <view>
+
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class PageWrapper extends wepy.component {
+//    mixins = [mixins]
+    props = {}
+    components = {}
+    data = {}
+    watch = {}
+    computed = {}
+    methods = {}
+    events = {}
+
+    onLoad () {
+    }
+  }
+</script>
+
+<style lang="scss" scoped>
+  @import "../../styles/index";
+</style>

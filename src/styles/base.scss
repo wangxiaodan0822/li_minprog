@@ -1,0 +1,172 @@
+@import "./variable";
+@import "./mixin";
+
+//标题样式
+.title {
+  font-size: $fontSizeTitle;
+  color: $colorTextPrimary;
+}
+
+// 正文样式
+.body {
+  font-size: $fontSizeBody;
+  color: $colorTextPrimary;
+}
+
+// 说明样式
+.caption {
+  font-size: $fontSizeCaption;
+  color: $colorTextSecondary;
+}
+
+//提示样式
+.hint {
+  font-size: $fontSizeHint;
+  color: $colorTextTertiary;
+}
+
+//价格样式
+.price {
+  color: $colorTextHighlight;
+  font-size: $fontSizePrice;
+}
+
+.dash-price {
+  color: $colorTextSecondary;
+  font-size: rpx(22);
+  text-decoration: line-through;
+}
+
+// 复选框样式
+checkbox {
+  display: inline-block;
+  width: rpx(32);
+  height: rpx(32);
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAAEgBckRAAAAAXNSR0IArs4c6QAAAutJREFUaAXtWc1qGzEQ9q79AoGW5uhccu3FPvRQCORU/0Dewob2EVpwad4gpdhvUXDtngqBHgq2Lzn3kBwTCPQFuut+o+wI/axiZ7W220aCzYyk0czom5EsKZXKQ0q73X4Z5w2Ioug4t4OEnR0R9XY6nQFRLo1G45R5m8KDa7W12+0+EXVTDQs5jTs7olartYzj+D2rWC6X/clksi/cHQwGtcVi8ZY7TQrhbxD+LttdjkkBMCzj9EkVVvnND1CtbYbnLHgD9XexNOwA0gSQfpDNFCBZcTCqzOZRepQWaoD+CgtyiNWvLUoOCQIX4ePqX0hF7mEPeZUkydTXP8CQIk+rlh7KReAkNxRLYM2GTM87VVxmHqyXgjT0aDOQBlSrZfLBwEo0twcRluv+SnfWE7hVxcRCowbk8CVInfiipVqttsbj8dei4x/pOBkDOsYBgyNzqa+Jyy2OaEOcg36b8sIAlCfIIu+UzQtyjTwn5eh8igzQUsz05r469FxnW75EheTJ6yNifJTTeJTRHdH/xgUx17Wg5truvXG3LBkNwYABiF0NENmYGC0BIgMQu/p/QFR4i1YBcZ1KavRLNJvNzmg/x4CRa1dUlZk8KcfXw1g6mWhF/DiUdD+4mk6nB5r2UAkIlICAdoLJkvUT9NZL0F1YBa0mPKK9XuecLiZAD2tYyj/ZcSi4Af8Z302RZV3Ec2wD5MszfCfgidJB67LZbB7mHXipnwq9hFTwKtgHqROPQSM8BVB9V6WPPXFI+xq+g8y3jy5n+LdGvr9hArlPOi4Fm2g3fJC+5dniCeT1/RNtYQK7DlOIQIiAJwIhhTwB9B4eIuANoaeCEAFPAL2Hiwjg1JewJvDiiM31XVDVB9W3PF84hc6Vzp78T7/SuC02s91T7J0rvMVKtOk2lqbpF8yYJ2UJb7MBR+oUt7LOqluZnAA7R7ez+Xz+AgqeYzJ7oNp/CVmubEqpAlu/QC9wC/tx3y2sbNtBnw8CfwBiOehgxnx+PgAAAABJRU5ErkJggg==');
+  background-size: 100%;
+}
+
+checkbox[checked] {
+  background-image: url('data:image/png;base64,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');
+}
+
+.wx-checkbox-input {
+  display: none;
+}
+
+// divider
+.divider {
+  width: 100%;
+  @include _hairline;
+  height: 1px;
+
+  &:after {
+    height: 1px;
+    background-color: $colorDivider;
+  }
+
+  &.large {
+    height: $dividerHeight;
+    background-color: $gray;
+    &:after {
+      width: 0;
+      height: 0;
+    }
+  }
+}
+
+// 按钮
+button {
+  display: inline-block;
+  padding: rpx(16) rpx(24);
+  border-radius: rpx(0);
+  font-size: $fontSizeBody;
+  line-height: normal;
+  margin-left: 0;
+  margin-right: 0;
+  overflow: visible;
+  @include border($radius: $radiusBorder);
+  image {
+    vertical-align: middle;
+  }
+  text {
+    vertical-align: middle;
+    display: inline-block;
+  }
+}
+
+button:not([type]), button[type] {
+  color: $colorTextPrimary;
+  background-color: transparent;
+  text {
+    color: $colorTextPrimary;
+  }
+}
+
+button[type="primary"] {
+  color: $colorPrimary;
+  &::after {
+    border-color: $colorPrimary;
+  }
+  text {
+    color: $colorPrimary;
+  }
+}
+
+button[type="borderless"] {
+  color: $white;
+  background-color: $colorPrimary;
+  padding: 0;
+  border-radius: 0;
+  &::after {
+    border-radius: 0;
+    border: none;
+  }
+  text {
+    color: white;
+  }
+}
+
+button[disabled]:not([type]), button[disabled][type] {
+  color: $colorTextTertiary;
+  background-color: transparent;
+  &:after {
+    border-color: $colorDisabledBorder;
+  }
+  text {
+    color: $colorTextTertiary;
+  }
+}
+
+button[disabled][type="borderless"] {
+  background-color: $colorDisabledButton;
+  color: $white;
+  border-radius: 0;
+  &:after {
+    border-radius: 0;
+    border: none;
+  }
+  text {
+    color: $white;
+  }
+}
+
+.button-hover:not([type]), .button-hover[type] {
+  color: $colorTextPrimary;
+  background-color: transparent;
+}
+
+.button-hover[type="primary"] {
+  color: $colorPrimary;
+  background-color: transparent;
+}
+
+.button-hover[type="borderless"] {
+  color: $white;
+  background-color: $colorPrimary;
+}
+
+// force hidden
+view[hidden], text[hidden], image[hidden] {
+  display: none !important;
+}
